@@ -2,8 +2,12 @@
 
 const obj = {
   arr: [1, 0],
-  merge: function (toMerge) { },
-  replace: function (newArr) { },
+  merge: function (toMerge) {
+    this.arr = toMerge.concat(this.arr);
+   },
+  replace: function (newArr) {
+    this.arr = newArr;
+   },
 };
 
 obj.merge([4]);

@@ -2,8 +2,12 @@
 
 const obj = {
   array: ['hi!'],
-  getArray: function () { },
-  getCopy: function () { },
+  getArray: function () {
+    return this.array;
+   },
+  getCopy: function () {
+    return [...this.array];
+   },
 };
 
 const reference1 = obj.getArray();

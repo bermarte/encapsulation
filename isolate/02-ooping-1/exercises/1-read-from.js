@@ -2,8 +2,12 @@
 
 const obj = {
   a: 0,
-  getA: function () { },
-  sumAB: function (b) { },
+  getA: function () { 
+    return this.a;
+  },
+  sumAB: function (b) {
+    return this.a + b;
+   },
 };
 
 const test1 = obj.getA() === 0;

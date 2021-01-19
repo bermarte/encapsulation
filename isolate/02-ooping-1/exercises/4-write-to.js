@@ -2,8 +2,13 @@
 
 const obj = {
   string: '',
-  setString: function (str) { },
-  remixString: function (mixer) { }
+  setString: function (str) {
+    this.string = str;
+   },
+  remixString: function (mixer) {
+    const str = this.string.split('').join(mixer).toString();
+    this.string = str;
+   }
 };
 
 obj.setString('hoy');
