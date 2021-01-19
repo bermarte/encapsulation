@@ -1,0 +1,9 @@
+{
+  "study": {
+    "eval": true,
+    "flowchart": true,
+    "loopGuard": true,
+    "save": true
+  },
+  "port": 4005
+}

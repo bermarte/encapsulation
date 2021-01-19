@@ -10,7 +10,8 @@ const obj = {
   mergeArrays: function (arrToMerge) {
     // merge the internal array with the argument
     //  without modifying the saved array!
-
+    //return this.array.concat(arrToMerge);
+    return [...this.array, ...arrToMerge];
   }
 }
 
