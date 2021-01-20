@@ -4,8 +4,13 @@ const obj = {
   number: 5,
   mod: 0,
   equals: 0,
-  setNumber: function (num) { },
-  modulo: function (modder) { }
+  setNumber: function (num) {
+    this.number = num;
+   },
+  modulo: function (modder) {
+    this.mod = modder;
+    this.equals = this.number%modder;
+   }
 };
 
 obj.modulo(2);

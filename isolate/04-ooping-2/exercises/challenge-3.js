@@ -3,16 +3,18 @@
 const obj = {
   _arr: [],
   get arr() {
-
+    //return a copy of all, can't have it being changed by reference!
+    //see http://localhost:4005/isolate/04-ooping-2/examples/2-big-small.js?--defaults line 3
+    return [...this._arr];
   },
   merge: function (toMerge) {
-
+    this._arr = [...toMerge, ...this._arr];
   },
   replaceAll: function (newEntry) {
-
+    return this._arr.fill(newEntry);
   },
   getRemixed(mixer) {
-
+    return obj.arr.join(mixer);
   },
 };
 

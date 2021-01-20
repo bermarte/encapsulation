@@ -6,7 +6,22 @@ const obj = {
     smallest: Infinity,
     all: []
   },
-  addNumber: function (newValue) { }
+  addNumber: function (newValue) {
+   
+    if (newValue > this.state.biggest){
+        this.state.biggest = newValue;
+    }
+    if (newValue < this.state.smallest){
+        this.state.smallest = newValue;
+    }
+    if (typeof newValue !== 'number'){
+        return false;
+    }
+    else{
+       this.state.all.push(newValue);
+       return true;
+    }
+   }
 };
 
 const returned1 = obj.addNumber(0);
