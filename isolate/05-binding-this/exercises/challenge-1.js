@@ -2,7 +2,14 @@
 
 // psst. use the debugger!
 
-const writeMe = function (arg) { };
+const writeMe = function (arg) {
+  if (isNaN(arg)){
+    return NaN;
+  }
+  if (typeof Number(arg) == 'number') {
+    return arg+this.thing;
+  }
+ };
 
 // don't change any code below this comment
 const obj1 = { thing: 1 };

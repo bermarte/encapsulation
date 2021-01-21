@@ -5,16 +5,19 @@
 
 const obj1 = {
   id: 1,
-  x: true
+  x: false
 };
 
 const obj2 = {
   id: 2,
-  list: [1, 2, 3],
+  list: [3, 2, 1],
+  friend: obj1
 };
 
 const obj3 = {
   id: 3,
+  foo: 'bar',
+  friend: obj2
 };
 
 // don't change any code below this comment

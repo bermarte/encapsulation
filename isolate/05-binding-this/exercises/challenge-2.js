@@ -9,11 +9,13 @@ const objC = { thing: false };
 
 // do write code here
 
-const writeMe = function () { }
+const writeMe = function () {
+  return this.thing;
+ }
 
-const boundA = _;
-const boundB = _;
-const boundC = _;
+const boundA = writeMe.bind(objA);
+const boundB = writeMe.bind(objB);
+const boundC = writeMe.bind(objC);
 
 // don't change this code
 
