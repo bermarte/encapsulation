@@ -25,7 +25,7 @@ console.log('--- fake set A ---');
 
 const fakeSetA = Object.create(fakeSetPrototype);
 fakeSetA.id = 'A';
-fakeSetA._ = _;
+fakeSetA.values = [];
 
 const testA1 = fakeSetA.size === 0;
 
@@ -52,7 +52,7 @@ console.log('--- fake set B ---');
 
 const fakeSetB = Object.create(fakeSetPrototype);
 fakeSetB.id = 'B';
-fakeSetB._ = _;
+fakeSetB.values = [];
 
 
 const testB1 = fakeSetB.size === 0;
@@ -78,5 +78,5 @@ console.log('fakeSetB:', fakeSetB);
 
 
 
-// this exercise replicates two instance methods and one instance property of Set
-//  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+//his exercise replicates two instance methods and one instance property of Set
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set

@@ -25,7 +25,7 @@ const incrementorA = Object.create(incrementorPrototype);
 incrementorA.id = 'A';
 incrementorA.state = {
   value: 0,
-  _: _
+  stepSize: 1
 };
 
 incrementorA.increment(); // value --> 1
@@ -46,7 +46,7 @@ console.log('--- incrementor B ---');
 const incrementorB = Object.create(incrementorPrototype);
 incrementorB.id = 'B';
 incrementorB.state = {
-  _: _,
+  value: -3,
   stepSize: -4
 };
 

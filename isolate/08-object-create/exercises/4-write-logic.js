@@ -4,15 +4,27 @@
 const userPrototype = {
   get status() {
     // render userName and loggedIn status into a string
+    let logged ='';
+    this.state.loggedIn?logged='logged in':logged = 'logged out';
+    const str = `${this.state.userName} is ${logged}`;
+    //console.log('str', str);
+    return str;
   },
   logIn: function (password) {
     // log the user in if they pass the correct password
+    if (this.state.password === password){
+      this.state.loggedIn = true;
+    }
   },
   logOut: function () {
     // log the user out no matter what
+    this.state.loggedIn = false;
   },
   changePassword: function (oldPassword, newPassword) {
     // if the user is logged in, and the oldPassword is correct, reset their password
+    if (this.state.loggedIn === true && this.state.password === oldPassword){
+      this.state.password = newPassword;
+    }
   }
 };
 console.log('userPrototype:', userPrototype);
@@ -35,6 +47,7 @@ userRory.state = {
 
 // test initial instances
 const testAverie0 = userAverie.status === 'Averie is logged out';
+console.log(userAverie.status);
 console.assert(testAverie0, 'Averie 0: Averie is logged out');
 
 const testRory0 = userRory.status === 'Rory is logged in';
@@ -92,4 +105,4 @@ console.assert(testRory3, 'Rory 3: Rory is logged out');
 
 // log users with final states
 console.log('userAverie:', userAverie);
-console.log('userRory:', userRory);
+// console.log('userRory:', userRory);
