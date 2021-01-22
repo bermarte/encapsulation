@@ -2,7 +2,9 @@
 
 // psst. use the debugger!
 
-function writeMe(boundArg, freeArg) { }
+function writeMe(boundArg, freeArg) {
+ return this.thing+boundArg+freeArg;
+}
 
 // don't change any code below this comment
 const obj1 = { thing: 1 };
