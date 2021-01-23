@@ -4,6 +4,43 @@
 //  hint: state should be an object of key/value pairs
 
 class EntriesManager {
+  constructor(entries = {}) {
+    this.entries = entries;
+    /*
+    this.state = {
+
+    }
+    */
+    
+  }
+
+  write(key, value) {
+    this.entries[key] = value;
+  }
+
+  read(key) {
+    //console.log('key', this.entries[key]);
+    if (this.entries.hasOwnProperty(key)) {
+      //console.log('key: ' + key);
+      return this.entries[key];
+    }
+    else {
+      //console.log('got it,', 'no key: ' + key);
+      throw new Error('no key: b'); 
+    }
+  }
+
+  remove(key){
+    if (this.entries.hasOwnProperty(key)){
+      delete this.entries[key];
+      return true;
+    }
+    else{
+      return false;
+    }
+    // console.log('remove '+ key);
+    // console.log(this.entries);
+  }
 
 };
 
@@ -46,6 +83,7 @@ try {
   instanceB.read('b');
   test6b = false;
 } catch (err) {
+  //console.log('ber err', err, err.message);
   test6b = err.message === 'no key: b';
 }
 console.assert(test6a, 'Test 6.A - read');

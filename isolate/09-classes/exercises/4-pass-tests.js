@@ -3,7 +3,14 @@
 // write the class
 //  hint: initial state --> { evens: [], odds: [], nanys: [] }
 //  hint: your constructor should organize the array of strings into the correct state arrays
+class Stringanizer  {
+  constructor(){
+    this.state={
 
+    }
+  }
+
+}
 
 // these lines are correct! don't change them
 const instanceA = new Stringanizer(['3', '2', 'e', '']);
