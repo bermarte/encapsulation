@@ -22,22 +22,23 @@ class MaxMin {
             max: -Infinity,
             min: Infinity
         }
-    // this.state.max = -Infinity;
-    // this.state.min = Infinity;
+
   }
   get spread() {
     return this.state.max - this.state.min;
   }
 
   addNumber(num){
+    /*
     if (num < this.state.min){
       this.state.min = num;
     }
     if (num > this.state.max){
       this.state.max = num;
     }
-    // this.state.min = num;
-    // this.state.max = num;
+    */
+    this.state.min = Math.min(num, this.state.min);
+    this.state.max = Math.max(num, this.state.max);
   }
   
 };

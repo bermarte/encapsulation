@@ -4,12 +4,24 @@
 //  hint: initial state --> { evens: [], odds: [], nanys: [] }
 //  hint: your constructor should organize the array of strings into the correct state arrays
 class Stringanizer  {
-  constructor(){
+  constructor(arg){
     this.state={
-
-    }
+      evens: arg.filter(n => n%2 === 0),
+      odds: arg.filter(n => n%2 !== 0 && Number(n)),
+      nanys: arg.filter(n => isNaN(n))
+    }   
   }
 
+  all(arg){
+    return this.state[arg];
+  }
+
+  addString(str){
+    if (str%2 === 0) this.state.evens.push(str);
+    if (str%2 !== 0 && Number(str)) this.state.odds.push(str);
+    if (isNaN(str)) this.state.nanys.push(str);
+  }
+   
 }
 
 // these lines are correct! don't change them

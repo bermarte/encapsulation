@@ -35,6 +35,34 @@
   <script id='ColorCycler-class'>
     class ColorCycler {
 
+      state = {
+        r: 0,
+        g: 0,
+        b: 0
+      };
+      
+      constructor(r,g,b){
+        this.state.r = r,
+        this.state.g = g,
+        this.state.b = b
+      };
+
+      cycle() {
+        this.state.r = (this.state.r + 10) % 255;
+        this.state.g = (this.state.g + 20) % 255;
+        this.state.b = (this.state.b + 30) % 255;
+      };
+      handleClick(element) {
+        this.cycle();
+        element.style.backgroundColor = `rgb(${this.state.r},${this.state.g},${this.state.b})`;
+      };
+      render() {
+        const container = document.createElement('div');
+        container.addEventListener('click', this.handleClick.bind(this, container));
+        container.className = 'color-cycler';
+        return container;
+      };
+
     };
   </script>
 
@@ -48,10 +76,12 @@
       // --- above here works
 
       // create a new table with dimensions x, y
+      const newTable = 1;
       //  create a new cycler for each table cell
+      const cycler = new ColorCycler(x,y,1);
       //  render the new cycler and append it to the cell
       // be sure to push each cycler instance to currentCyclers!
-
+      currentCyclers.push(cycler);
 
       // --- below here works
 
